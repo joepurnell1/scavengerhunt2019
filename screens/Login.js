@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
-import { KeyboardAvoidingView, Text, Button, StyleSheet, TextInput, Image } from 'react-native';
+import { KeyboardAvoidingView, Text, StyleSheet, TextInput, Image } from 'react-native';
+import Button from '../components/Button';
 import { storeAuthToken, getAuthToken } from '../services/auth';
 import Map from '../assets/images/map.png';
+
+const REAL_CODE = 'PPPP';
 
 class LoginScreen extends Component {
   constructor() {
@@ -14,7 +17,7 @@ class LoginScreen extends Component {
 
   async componentDidMount() {
     const authToken = await getAuthToken();
-    // if (authToken === 'PPPP') {
+    // if (authToken === REAL_CODE) {
     //   this.props.navigation.navigate('Main');
     // }
   }
@@ -24,7 +27,7 @@ class LoginScreen extends Component {
   }
 
   handleSignIn = () => {
-    if(this.state.authToken === 'PPPP') {
+    if(this.state.authToken === REAL_CODE) {
       storeAuthToken(this.state.authToken);
       this.props.navigation.navigate('Main');
     } else if (this.state.authToken) {
@@ -48,13 +51,8 @@ class LoginScreen extends Component {
           maxLength={4}
           autoCapitalize="characters"
           onChangeText={this.onInputChange}
-          onSubmitEditing={this.handleSignIn}
         />
-        <Button
-          title="Login"
-          onPress={this.handleSignIn}
-          color="#2374AB"
-        />
+        <Button onPress={this.handleSignIn}>Sign In</Button>
       </KeyboardAvoidingView>
     );
   }
