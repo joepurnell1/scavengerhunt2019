@@ -62,29 +62,30 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
   },
   title: {
     color: '#06BEE1',
     fontSize: 64,
-    fontWeight: "700",
-    textAlign: "center",
+    fontWeight: '700',
+    textAlign: 'center',
   },
   year: {
     color: '#06BEE1',
-    fontWeight: "700",
+    fontWeight: '700',
     fontSize: 110,
   },
   error: {
     color: 'red',
     fontSize: 16,
-    fontWeight: "600",
+    fontWeight: '600',
     paddingBottom: 12,
   },
   textInput: {
     fontSize: 64,
-    fontWeight: "700",
-    color: "#2374AB"
+    fontWeight: '700',
+    color: '#2374AB',
+    textAlign: 'center'
   },
   image: {
     height: 200,
