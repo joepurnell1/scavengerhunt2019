@@ -15,3 +15,21 @@ Just use the following from within the project to get up and running:
 npm i
 npm start
 ```
+
+## DB
+
+### Structure
+For keeping scores and team details, firebase has been chosen for its free tier (that's all we need). Here's the data structure:
+
+TEAMS
+<TEAM-ID>
+- teamName: String
+- score: String
+- progress: Integer
+- picture: String
+- individualScores: Array(Integer)
+- totalScore: Integer
+
+### Functions
+#### Add Score
+There is a cloud function in place, when a individual score array is update the function will add up the scores and update the total field. There no need to update the total score manually 🤯.
